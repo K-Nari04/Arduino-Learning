@@ -49,9 +49,6 @@ void setup()
   particleSensor.setup(); //Configure sensor. Use 6.4mA for LED drive
 
    byte rc;
-
-  Serial.begin(115200);
-  while (!Serial);
   
   Wire.begin();
   
@@ -75,19 +72,19 @@ void loop()
 
   rc = kxg03.get_val(val);
   if (rc == 0) {
-    Serial.print("X-Gyro: ");
-    Serial.println(val[0], 2);
-    Serial.print("Y-Gyro: ");
-    Serial.println(val[1], 2);
-    Serial.print("Z-Gyro: ");
-    Serial.println(val[2], 2);
-    Serial.print("X-Accelerator: ");
-    Serial.println(val[3], 2);
-    Serial.print("Y-Accelerator: ");
-    Serial.println(val[4], 2);
-    Serial.print("Z-Accelerator: ");
-    Serial.println(val[5], 2);
-    Serial.println(" ");
+    debug.print("X-Gyro: ");
+    debug.println(val[0], 2);
+    debug.print("Y-Gyro: ");
+    debug.println(val[1], 2);
+    debug.print("Z-Gyro: ");
+    debug.println(val[2], 2);
+    debug.print("X-Accelerator: ");
+    debug.println(val[3], 2);
+    debug.print("Y-Accelerator: ");
+    debug.println(val[4], 2);
+    debug.print("Z-Accelerator: ");
+    debug.println(val[5], 2);
+    debug.println(" ");
   }
   delay(100);
 }
